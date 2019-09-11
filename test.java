@@ -19,11 +19,16 @@ class test
 
 		System.out.println("===============round1 begin======================");
 		String[] ret = {};//初始结果为空
-		int i;
+		int i,k;
 		for(i=0; i<arr.length; i++)
 		{
+			k=arr[i];
+			if(k >= strArray.length){
+				System.out.println("错误：数字"+k+"超出映射范围!");
+				return;
+			}
 			//结果数组再和后面输入的字符串进行组合，得出新的结果数组备用
-			ret = compose(ret,  strArray[arr[i]]);
+			ret = compose(ret,  strArray[k]);
 		}
 
 		//打印结果
@@ -48,13 +53,13 @@ class test
 		int i,k;
 		for(i=0; i<arr.length; i++)
 		{
-			//结果数组再和后面输入的字符串进行组合，得出新的结果数组备用
 			k=arr[i];
 			if(k >= strArray.length){
 				System.out.println("错误：数字"+k+"超出映射范围!");
 				return;
 			}
-			ret = compose(ret,  strArray[arr[i]]);
+			//结果数组再和后面输入的字符串进行组合，得出新的结果数组备用
+			ret = compose(ret,  strArray[k]);
 		}
 
 		//打印结果
